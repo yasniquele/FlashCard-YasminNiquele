@@ -1,42 +1,147 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/style.css">
-    <title>FlashCards</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Flashcards - Teste</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: bisque;
+    margin: 0;
+    padding-bottom: 4rem;
+  }
+  #container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 2rem;
+    justify-content: center;
+  }
+  .cartao {
+    width: 280px;
+    min-height: 180px;
+    background: aqua;
+    border-radius: 8px;
+    padding: 1rem;
+    box-sizing: border-box;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease;
+  }
+  .cartao:hover {
+    transform: scale(1.03);
+  }
+  .cartao h3 {
+    background: tomato;
+    color: white;
+    margin: 0 0 10px 0;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  .resposta {
+    display: none;
+    margin-top: 10px;
+    color: #222;
+  }
+  .cartao.mostrar .resposta {
+    display: block;
+  }
+  footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: black;
+    color: white;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+</style>
 </head>
 <body>
-   <main>
-    <section id="container"> 
-        <article class="cartao">
-                <div class="cartao__conteudo">
-                  <h3> Programação </h3>
-                  <div class="cartao__conteudo__pergunta">
-                    O que é Java Script?
-                </div>
-                <div class="cartao__conteudo__resposta">
-                O Java Script é uma linguagem de programação.
-                </div>
-                </div>
-            </article>
 
-<article class="cartao">
-        <div class="cartao__conteudo">
-                <h3> Programação </h3>
-                      <div class="cartao__conteudo__pergunta">
-                            O que é CSS?
-                        </div>                        
-                       <div class="cartao__conteudo__resposta">
-                            O CSS é uma linguagem de estilização.
-                         </div>
-                        </div>
-                            
-         </article>
-</section>
-    </main>
-    <footer>
-        <p>Projeto desenvolvido pela Yasmin Niquele, estudante do Colégio Estadual do Paraná.</p>
-    </footer> 
+<main>
+  <section id="container">
+
+    <article class="cartao">
+      <h3>Programação</h3>
+      <p class="pergunta">O que é HTML?</p>
+      <p class="resposta">HTML é a linguagem de marcação usada para estruturar conteúdo.</p>
+    </article>
+
+    <article class="cartao">
+      <h3>Programação</h3>
+      <p class="pergunta">O que é CSS?</p>
+      <p class="resposta">CSS é a linguagem usada para estilizar páginas HTML.</p>
+    </article>
+
+    <article class="cartao">
+      <h3>Programação</h3>
+      <p class="pergunta">O que é JavaScript?</p>
+      <p class="resposta">JavaScript permite interatividade em páginas web.</p>
+    </article>
+
+    <article class="cartao">
+      <h3>Programação</h3>
+      <p class="pergunta">O que é variável?</p>
+      <p class="resposta">Espaço na memória para guardar dados.</p>
+    </article>
+
+    <article class="cartao">
+      <h3>Programação</h3>
+      <p class="pergunta">O que é função?</p>
+      <p class="resposta">Um bloco de código reutilizável.</p>
+    </article>
+
+    <article class="cartao">
+      <h3>Programação</h3>
+      <p class="pergunta">O que é array?</p>
+      <p class="resposta">Estrutura que guarda múltiplos valores.</p>
+    </article>
+
+    <article class="cartao">
+      <h3>Programação</h3>
+      <p class="pergunta">O que é objeto?</p>
+      <p class="resposta">Conjunto de pares chave-valor.</p>
+    </article>
+
+    <article class="cartao">
+      <h3>Programação</h3>
+      <p class="pergunta">O que é DOM?</p>
+      <p class="resposta">Representação da página HTML no navegador.</p>
+    </article>
+
+    <article class="cartao">
+      <h3>Programação</h3>
+      <p class="pergunta">O que é loop?</p>
+      <p class="resposta">Estrutura que repete código.</p>
+    </article>
+
+    <article class="cartao">
+      <h3>Programação</h3>
+      <p class="pergunta">O que é responsividade?</p>
+      <p class="resposta">Adaptação do site a diferentes telas.</p>
+    </article>
+
+  </section>
+</main>
+
+<footer>
+  <p>Projeto desenvolvido por Yasmin Niquele</p>
+</footer>
+
+<script>
+  // Toggle resposta visível ao clicar no cartão
+  document.querySelectorAll('.cartao').forEach(card => {
+    card.addEventListener('click', () => {
+      card.classList.toggle('mostrar');
+    });
+  });
+</script>
+
 </body>
 </html>
+
+
